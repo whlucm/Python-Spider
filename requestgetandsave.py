@@ -28,10 +28,8 @@ def jpgsave(pictureurl,picturename,saveaddress):
 
 #视频信息存入数据库
 def saveOracle(movtitle,movurl,picturename,pictureurl,saveaddress,upload,movlong,movcrtime,creattime,cursor):
-      cursor.execute ("INSERT INTO VIDEO (movtitle,movurl,picturename,pictureurl,saveaddress,upload,movlong,movcrtime,creattime)VALUES\
-('%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(str(movtitle),str(movurl),str(picturename),str(pictureurl),str(saveaddress),str(upload),str(movlong),str(movcrtime),str(creattime)))      
-
-
+      cursor.execute ("INSERT INTO VIDEO (movtitle,movurl,picturename,pictureurl,saveaddress,upload,movlong,movcrtime,creattime)VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(str(movtitle),str(movurl),str(picturename),str(pictureurl),str(saveaddress),str(upload),str(movlong),str(movcrtime),str(creattime)))
+     
 #核心解析
 def parserhtml(soup,sn,conn,cursor):
       for div in soup.find_all('div',attrs = {'class':'listchannel'}):
